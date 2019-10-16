@@ -1,7 +1,7 @@
 /* Page1 css */
 
 .jumbotron{
-    background: rgba(3, 235, 3, 0.452);
+    background: rgba(67, 161, 3, 0.767);
     /* background-image: url(https://www.easywdw.com/reports13/mickeys_christmastime_parade_party_2016-8.jpg); */
 }
 .display-4{
@@ -36,5 +36,8 @@
 #form{
     margin-left: 264px;
     margin-top: 77px;
-    background-color: red;
+    /* background-color: red; */
 }
+/* #add-user{
+
+} */

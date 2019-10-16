@@ -1,239 +1,301 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Tree of Love</title>
 
-    <!-- Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tree of Love</title>
 
-    <!-- LINK TO FIREBASE GOES HERE -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  </head>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
 
-  <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-          <a class="navbar-brand" href="#">Tree of Love</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <!-- <li class="nav-item">
+  <!-- LINK TO FIREBASE GOES HERE -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#" style = 'color:white'>Welcome to the 21st Annual Tree of Love</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item">
                 <a class="nav-link" href="page1.html">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li> -->
-              <!-- <li class="nav-item">
+        <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
               </li> -->
-              <!-- <li class="nav-item">
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li> -->
-            </ul>
+      </ul>
+    </div>
+  </nav>
+  <!-- <div class="container"> -->
+
+
+
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <img id="header"
+      src="https://gallery.mailchimp.com/304eff75e71b175f370020b9d/images/51e9b7ca-270f-490a-99d9-875e80af2bf8.png"
+      class="card-img-top" alt="...">
+      <h1 class="text-center"><strong>Sign-Up Today for Commissioner Larry Johnson's Tree of Love,    please take the time to
+        fill out one form for one child at a time. 
+      </h1></strong>
+      
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://lh3.googleusercontent.com/6Ul_3cC7P85nyHIHrJwl_9S12zdv_T5ORAAlWSRD_6sRCRsb7pC6zDk-j8AdEd0ALTWJ1gNMNqh-UizJQ-aIGsHqXwCnylIU5PnOWOuae8a1yfKbXG-TJS0t_l3g08Pk2BFuw9dWYuJYQPQyTJ6i2itz-5PBzRIGJ7pRWSXRnQX7uj1oKy7SWtm8t8h5WRc1aAJz2mmCDJ05ZgiVMQEH56IZoJ3-U7SI8gNoE7tKw7RuDGEVQpG_wneLmLlX3v93pmHpV_82mfHv_HrqJ5McuvUr1jIum2X8M2dlhFqq1SPyETgyj_0w1yVxUrdnbp0XLWiYrRq9Tp54J7vj8OP_zBLcx3UgGwiKUFC950ix-kYcFf4JSgFFMU7hoiSO4cVXLdZ0i31CwxhCuILYKyr6h8sgbCf0SkOps3cBgQ6u1mjNnw7eK_EktZIC8iyN3wGlXFtFaCkJfIIbZ_6vEaEUeeRN2dGwNJj_SbpzM6OCk6v8powg4oD0lga3tEiFHaN6LIsp766m2GFo5gDGGhkRl48V-d-PiI-CMhGTNslLU0i_qRuy3WAGwc7Y-gqxCtqqYTwMGKytb8CqbuNB2jqbWkIcQ9QeRULo_W03wZkYRUhlVO4RGvN8KQ9o5YIy1gqv5bYyPGWXQvIpGPgYC9uuFtEgVL8BicP9P9aHqptH79sH_buxvCv7eBM=w1836-h1376-no"
+              class="d-block"
+              id="photo1"
+              alt="TOL"
+            />
           </div>
-        </nav>
-    <!-- <div class="container"> -->
-  
+          <div class="carousel-item">
+            <img
+              src="https://lh3.googleusercontent.com/CSkINypE34IXWefUfgDxEQolooHhASqvnJEC-F5JKgwAB5O2vdNyfn_9kLnuEbsTtWhMmhHtE9ZlhqLApm-Hn5Dcim96gqTPXbOtNWfMuTtOuKMp9rcfat_3kHCjMsZRR7SdnxrkMVcfaOLqXhJvjtbJhDiFE7zBe5TVFY9jNY92gvoo1GRFbhzdzi_SFU7SGtg8WL9SG-_rYQNYRnkt6EdL89hg5CkUPOsyQxSo_D2D7vbxa172eiT9coRSELlKeoON9_CJQUHcOLUBCvyh_XVUnqzMhqsnTW6UhHUBRZGTUSnuszn_GBsXhQXn_0I9TROR9ZYlZUwdcN2tTWv_QA8fRDxAc0M_AvNdmP7P2yrBu6YkbEtzhbqSmHhIk5yKMSto5ApzCAmH-4vJvfWMSVBQx7C3-QmD-P0WCo0Gd8piqSXRzVGkdxb8sPnRHDQqG6FmBix3ZiRb9BvFwMB7Lqow8vQ2jo26DdLWP3fGxWLkmb42osKV_zqKZiQIl3B75cV_xQf5QM7tPAYBBFSvoRkZSw8gmKK0apw9QY2aV82j23PewVC8HNnmxfWUrOYVSdgav1YtnBqlkvv1g3GkC2JtjB6syynnPkq8omMCZ-b-EuMhddCmgV31cIA8crBFclU9I-nRGId7osSO3kpBx2KNrhE5frf4jIZOOVK2ghQJ-77JOFzdEWA=w1836-h1376-no"
+              class="d-block"
+              id="photo2"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://lh3.googleusercontent.com/Y3r_14nrufzcRqk4wcFXAAOFDlx6XBWOwhusSTnE45lTO_kbzudXWT2fMCu_XL8TnHm7VbqxgvOcsZDjnMHgrps7JgWirxMU9XddFO71wSSm4j6F6Q1zOr7ofbn4VCt694expfhM2V_uq9trbdh1ECWsL2XSq5DyCYyk8j4EXFkBWT_cOGHdua27jx34ldPGhgVSjRas_kIDSEok3qQcD7APN2X-DM9A0F2JLP5yjhBdrWipqbAE425XOWimEqI-AunMKrvI7CyVxavWSx5yODs4s-TkhMWM8xdhs49IjsR7ELLh2wfz58I5jEyzcFCUHSBao5qBqspHjBR2lGuDW6V45K4RFh2Szt6XL34DV1PS-F1uQPJAdNhQZ48oAboWnkmXZuK9y8YWpTTJXipBsZ8JKt2FTvpnFMmDyQcfNMY-j9rv5gP-kIim0lke2KAjDP7uNpZTnCX-6ls63JKypEejkJyyhYoqzqC_ym81Rabsl0nBD59WLLuyOO3OH45No1iOixIlXzQCymBdQ41O-gP65bXCc7lvIE0eg6qqCWxnezad_tSnRyGo8OLLJjdDMp8fAHePNXHQyuuQ2XMmGPfcv8HJuEszOKlynBZqILdALv2koaj19MHNgacjJrBlrvzJZiA2pPL-8sSZf4MnkpphFW5rxelgi8mCcnvyxP6YOjalNrZnOD8=w1836-h1376-no"
+              class="d-block "
+              id="photo3"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://lh3.googleusercontent.com/Y3r_14nrufzcRqk4wcFXAAOFDlx6XBWOwhusSTnE45lTO_kbzudXWT2fMCu_XL8TnHm7VbqxgvOcsZDjnMHgrps7JgWirxMU9XddFO71wSSm4j6F6Q1zOr7ofbn4VCt694expfhM2V_uq9trbdh1ECWsL2XSq5DyCYyk8j4EXFkBWT_cOGHdua27jx34ldPGhgVSjRas_kIDSEok3qQcD7APN2X-DM9A0F2JLP5yjhBdrWipqbAE425XOWimEqI-AunMKrvI7CyVxavWSx5yODs4s-TkhMWM8xdhs49IjsR7ELLh2wfz58I5jEyzcFCUHSBao5qBqspHjBR2lGuDW6V45K4RFh2Szt6XL34DV1PS-F1uQPJAdNhQZ48oAboWnkmXZuK9y8YWpTTJXipBsZ8JKt2FTvpnFMmDyQcfNMY-j9rv5gP-kIim0lke2KAjDP7uNpZTnCX-6ls63JKypEejkJyyhYoqzqC_ym81Rabsl0nBD59WLLuyOO3OH45No1iOixIlXzQCymBdQ41O-gP65bXCc7lvIE0eg6qqCWxnezad_tSnRyGo8OLLJjdDMp8fAHePNXHQyuuQ2XMmGPfcv8HJuEszOKlynBZqILdALv2koaj19MHNgacjJrBlrvzJZiA2pPL-8sSZf4MnkpphFW5rxelgi8mCcnvyxP6YOjalNrZnOD8=w1836-h1376-no"
+              class="d-block "
+              id="photo3"
+              alt="..."
+            />
+          <!-- </div>
+          <div class="carousel-item">
+            <img src="" class="d-block " id="photo3" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="" class="d-block " id="photo3" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="" class="d-block " id="photo3" alt="..." />
+          </div> -->
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
       
-
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-          <img id="header" src="https://gallery.mailchimp.com/304eff75e71b175f370020b9d/images/51e9b7ca-270f-490a-99d9-875e80af2bf8.png" class="card-img-top" alt="...">
-        <h1 class="text-center">Sign-Up Today for Commissioner Larry Johnson Tree of Love, Feel Free to submit the form multiple times for children.....one Child Input at a time! </h1>
-      
-       
       <div class="row">
-        <!-- Sign-Up Card-->
-        <div class="col-lg-6" id="form">
-          <div class="card card-default" style="background:green">
-            <div class="card-header">
-              Tree of Love Sign-Up Form
-            </div>
-            <div class="card-body">
-              <!-- Sign-up Form (note the various input "types")-->
+      <!-- Sign-Up Card-->
+      <div class="col-lg-6" id="form">
+        <div class="card card-default" >
+          <div class="card-header" style="margin: auto">
+            Tree of Love Sign-Up Form
+          </div>
+          <div class="card-body">
+            <!-- Sign-up Form (note the various input "types")-->
 
-              <form role="form">
-                <div class="form-group row">
-                  <label for="email-input">Email:</label>
-                  <input class="form-control" id="email-input" type="email" />
-                </div><div class="form-group row">
-                    <label for="name-input">Parent's Name:</label>
-                    <input class="form-control" id="pname-input" type="text" />
-                  </div>
-                <div class="form-group row">
-                  <label for="name-input">Child's Name:</label>
-                  <input class="form-control" id="name-input" type="text" />
-                </div>
-                <div class="form-group row">
-                    <label for="name-input">Child's Gender:</label>
-                    <input class="form-control" id="Gender-input" type="text" />
-                  </div>
-                <div class="form-group row">
-                  <label for="age-input">Child's Age:</label>
-                  <input class="form-control" id="age-input" type="number" />
-                </div>
-                <div class="form-group row">
-                    <label for="name-input">Clothing Size:</label>
-                    <input class="form-control" id="clothing-input" type="text" />
-                  </div>
-                  <!-- <div class="form-group row">
+            <form role="form">
+              <div class="form-group row">
+                <label for="email-input">Email:</label>
+                <input class="form-control" id="email-input" type="email" />
+              </div>
+              <div class="form-group row">
+                <label for="name-input">Parent's Name:</label>
+                <input class="form-control" id="pname-input" type="text" />
+              </div>
+              <div class="form-group row">
+                <label for="name-input">Child's Name:</label>
+                <input class="form-control" id="name-input" type="text" />
+              </div>
+              <div class="form-group row">
+                <label for="name-input">Child's Gender:</label>
+                <input class="form-control" id="Gender-input" type="text" />
+              </div>
+              <div class="form-group row">
+                <label for="age-input">Child's Age:</label>
+                <input class="form-control" id="age-input" type="number" />
+              </div>
+              <div class="form-group row">
+                <label for="name-input">Clothing Size:</label>
+                <input class="form-control" id="clothing-input" type="text" />
+              </div>
+              <!-- <div class="form-group row">
                     <label for="name-input">Shoe Size:</label>
                     <input class="form-control" id="shoe-input" type="text" />
                   </div> -->
-                <div class="form-group row">
-                  <label for="comment-input">Gift Requested: List the top 3</label>
-                  <textarea
-                    class="form-control"
-                    rows="5"
-                    id="gift-input"
-                  ></textarea>
-                </div>
-                <button class="btn btn-primary btn-lg btn-block" id="add-user" type="submit">
-                  Submit
-                </button>
-                
-              </form>
-            </div>
+              <div class="form-group row">
+                <label for="comment-input">Gift Requested: List the top 3</label>
+                <textarea class="form-control" rows="5" id="gift-input"></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" id="submit" type="submit">
+                Submit
+              </button>
+
+            </form>
           </div>
-        </div>
-</div>
-        <!-- Most Recent Member card -->
-        <!-- <div class="col-lg-6">
-          <div class="card card-default">
-            <div class="card-header">
-              Most Recent Member
-            </div>
-            <div class="card-body" id="recent-member">
-              <h2 id="pname-display"></h2>
-              <h2 id="name-display"></h2>
-              <h4 id="gender-display"></h4>
-              <h4 id="email-display"></h4>
-              <h4 id="age-display"></h4>
-              <h3 id="clothing-display"></h3>
-              < <h4 id="shoe-display"></h4> -->
-              <!-- <p id="gift-display"></p>
-            </div> -->
-          </div> 
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+ 
 
-    <!-- Script -->
-    <script>
-      // ========================================== START CODING BELOW!!
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
 
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDu74QMFEqct9MjukCRG_FhJkRGG9L2k54",
-        authDomain: "tree-of-love.firebaseapp.com",
-        databaseURL: "https://tree-of-love.firebaseio.com",
-        projectId: "tree-of-love",
-        storageBucket: "tree-of-love.appspot.com",
-        messagingSenderId: "781713151613",
-        appId: "1:781713151613:web:5f918b9a05ccceab914314"
-      };
+  <!-- Script -->
+  <script>
+    // ========================================== START CODING BELOW!!
+    $(document).ready(function () {
 
-      firebase.initializeApp(config);
-
-      // Create a variable to reference the database.
-      var database = firebase.database();
-
-      // Initial Values
-      var pname = "";
-      var name = "";
-      var email = "";
-      var age = 0;
-      var comment = "";
-      // var shoe = "";
-      var clothing = "";
-
-      // Capture Button Click
-      $("#add-user").on("click", function(event) {
-        event.preventDefault();
-
-        // Grabbed values from text boxes
-        pname = $("#pname-input")
-          .val()
-          .trim();
-        name = $("#name-input")
-          .val()
-          .trim();
-        email = $("#email-input")
-          .val()
-          .trim();
-        age = $("#age-input")
-          .val()
-          .trim();
-        comment = $("#gift-input")
-          .val()
-          .trim();
-        clothing = $("#clothing-input")
-            .val()
-            .trim();
-        gender = $("#Gender-input")
-            .val()
-            .trim();
-        // Shoe = $("#Shoe-input")
-        //     .val()
-        //     .trim();
-
-        // Code for handling the push
-        database.ref().push({
-          pname: pname,
-          name: name,
-          email: email,
-          age: age,
-          comment: comment,
-          clothing: clothing,
-          gender: gender,
-          dateAdded: firebase.database.ServerValue.TIMESTAMP
-        });
+      // Here we use jQuery to select the header with "click-me" as its ID.
+      // Notice I have the #click-me, click, and then the function
+      // So $("#id|.class|element").on("action", function(){});
+      // And so whenever it is clicked...
+      $("#submit").on("click", function () {
+        alert("Thank you for the submission, we have now have your child in our database.");
       });
 
-      // Firebase watcher .on("child_added"
-      database.ref().on(
-        "child_added",
-        function(snapshot) {
-          // storing the snapshot.val() in a variable for convenience
-          var sv = snapshot.val();
+    });
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDu74QMFEqct9MjukCRG_FhJkRGG9L2k54",
+      authDomain: "tree-of-love.firebaseapp.com",
+      databaseURL: "https://tree-of-love.firebaseio.com",
+      projectId: "tree-of-love",
+      storageBucket: "tree-of-love.appspot.com",
+      messagingSenderId: "781713151613",
+      appId: "1:781713151613:web:5f918b9a05ccceab914314"
+    };
 
-          // Console.loging the last user's data
-          console.log(sv.pname);
-          console.log(sv.name);
-          console.log(sv.email);
-          console.log(sv.age);
-          console.log(sv.comment);
-          console.log(sv.gender);
-          console.log(sv.clothing);
-          // console.log(sv.shoe);
+    firebase.initializeApp(config);
 
-          // Change the HTML to reflect
-          $("#pname-display").text(sv.pname);
-          $("#name-display").text(sv.name);
-          $("#email-display").text(sv.email);
-          $("#age-display").text(sv.age);
-          $("#gift-display").text(sv.comment);
-          $("#gender-display").text(sv.gender);
-          $("#clothing-display").text(sv.clothing);
-          // $("#shoe-display").text(sv.shoe);
+    // Create a variable to reference the database.
+    var database = firebase.database();
 
-          // Handle the errors
-        },
-        function(errorObject) {
-          console.log("Errors handled: " + errorObject.code);
-        }
-      );
-    </script>
-  </body>
+    // Initial Values
+    var pname = "";
+    var name = "";
+    var email = "";
+    var age = 0;
+    var comment = "";
+    // var shoe = "";
+    var clothing = "";
+
+    // Capture Button Click
+    $("#add-user").on("click", function (event) {
+      event.preventDefault();
+
+      // Grabbed values from text boxes
+      pname = $("#pname-input")
+        .val()
+        .trim();
+      name = $("#name-input")
+        .val()
+        .trim();
+      email = $("#email-input")
+        .val()
+        .trim();
+      age = $("#age-input")
+        .val()
+        .trim();
+      comment = $("#gift-input")
+        .val()
+        .trim();
+      clothing = $("#clothing-input")
+        .val()
+        .trim();
+      gender = $("#Gender-input")
+        .val()
+        .trim();
+      // Shoe = $("#Shoe-input")
+      //     .val()
+      //     .trim();
+
+      // Code for handling the push
+      database.ref().push({
+        pname: pname,
+        name: name,
+        email: email,
+        age: age,
+        comment: comment,
+        clothing: clothing,
+        gender: gender,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
+    });
+
+    // Firebase watcher .on("child_added"
+    database.ref().on(
+      "child_added",
+      function (snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();
+
+        // Console.loging the last user's data
+        console.log(sv.pname);
+        console.log(sv.name);
+        console.log(sv.email);
+        console.log(sv.age);
+        console.log(sv.comment);
+        console.log(sv.gender);
+        console.log(sv.clothing);
+        // console.log(sv.shoe);
+
+        // Change the HTML to reflect
+        $("#pname-display").text(sv.pname);
+        $("#name-display").text(sv.name);
+        $("#email-display").text(sv.email);
+        $("#age-display").text(sv.age);
+        $("#gift-display").text(sv.comment);
+        $("#gender-display").text(sv.gender);
+        $("#clothing-display").text(sv.clothing);
+        // $("#shoe-display").text(sv.shoe);
+
+        // Handle the errors
+      },
+      function (errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+      }
+    );
+
+  </script>
+</body>
+
 </html>
