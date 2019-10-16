@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tree of Love</title>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- LINK TO FIREBASE GOES HERE -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  </head>
+
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <a class="navbar-brand" href="#">Tree of Love</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="page1.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+          </div>
+        </nav>
+    <!-- <div class="container"> -->
+  
+      
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+          <img id="header" src="https://gallery.mailchimp.com/304eff75e71b175f370020b9d/images/51e9b7ca-270f-490a-99d9-875e80af2bf8.png" class="card-img-top" alt="...">
+        <h1 class="text-center">Sign-Up Today for Commissioner Larry Johnson Tree of Love, Feel Free to submit the form multiple times for children.....one Child Input at a time! </h1>
+      
+       
+      <div class="row">
+        <!-- Sign-Up Card-->
+        <div class="col-lg-6" id="form">
+          <div class="card card-default" style="background:green">
+            <div class="card-header">
+              Tree of Love Sign-Up Form
+            </div>
+            <div class="card-body">
+              <!-- Sign-up Form (note the various input "types")-->
+
+              <form role="form">
+                <div class="form-group row">
+                  <label for="email-input">Email:</label>
+                  <input class="form-control" id="email-input" type="email" />
+                </div><div class="form-group row">
+                    <label for="name-input">Parent's Name:</label>
+                    <input class="form-control" id="pname-input" type="text" />
+                  </div>
+                <div class="form-group row">
+                  <label for="name-input">Child's Name:</label>
+                  <input class="form-control" id="name-input" type="text" />
+                </div>
+                <div class="form-group row">
+                    <label for="name-input">Child's Gender:</label>
+                    <input class="form-control" id="Gender-input" type="text" />
+                  </div>
+                <div class="form-group row">
+                  <label for="age-input">Child's Age:</label>
+                  <input class="form-control" id="age-input" type="number" />
+                </div>
+                <div class="form-group row">
+                    <label for="name-input">Clothing Size:</label>
+                    <input class="form-control" id="clothing-input" type="text" />
+                  </div>
+                  <!-- <div class="form-group row">
+                    <label for="name-input">Shoe Size:</label>
+                    <input class="form-control" id="shoe-input" type="text" />
+                  </div> -->
+                <div class="form-group row">
+                  <label for="comment-input">Gift Requested: List the top 3</label>
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    id="gift-input"
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" id="add-user" type="submit">
+                  Submit
+                </button>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+</div>
+        <!-- Most Recent Member card -->
+        <!-- <div class="col-lg-6">
+          <div class="card card-default">
+            <div class="card-header">
+              Most Recent Member
+            </div>
+            <div class="card-body" id="recent-member">
+              <h2 id="pname-display"></h2>
+              <h2 id="name-display"></h2>
+              <h4 id="gender-display"></h4>
+              <h4 id="email-display"></h4>
+              <h4 id="age-display"></h4>
+              <h3 id="clothing-display"></h3>
+              < <h4 id="shoe-display"></h4> -->
+              <!-- <p id="gift-display"></p>
+            </div> -->
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Script -->
+    <script>
+      // ========================================== START CODING BELOW!!
+
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDu74QMFEqct9MjukCRG_FhJkRGG9L2k54",
+        authDomain: "tree-of-love.firebaseapp.com",
+        databaseURL: "https://tree-of-love.firebaseio.com",
+        projectId: "tree-of-love",
+        storageBucket: "tree-of-love.appspot.com",
+        messagingSenderId: "781713151613",
+        appId: "1:781713151613:web:5f918b9a05ccceab914314"
+      };
+
+      firebase.initializeApp(config);
+
+      // Create a variable to reference the database.
+      var database = firebase.database();
+
+      // Initial Values
+      var pname = "";
+      var name = "";
+      var email = "";
+      var age = 0;
+      var comment = "";
+      // var shoe = "";
+      var clothing = "";
+
+      // Capture Button Click
+      $("#add-user").on("click", function(event) {
+        event.preventDefault();
+
+        // Grabbed values from text boxes
+        pname = $("#pname-input")
+          .val()
+          .trim();
+        name = $("#name-input")
+          .val()
+          .trim();
+        email = $("#email-input")
+          .val()
+          .trim();
+        age = $("#age-input")
+          .val()
+          .trim();
+        comment = $("#gift-input")
+          .val()
+          .trim();
+        clothing = $("#clothing-input")
+            .val()
+            .trim();
+        gender = $("#Gender-input")
+            .val()
+            .trim();
+        // Shoe = $("#Shoe-input")
+        //     .val()
+        //     .trim();
+
+        // Code for handling the push
+        database.ref().push({
+          pname: pname,
+          name: name,
+          email: email,
+          age: age,
+          comment: comment,
+          clothing: clothing,
+          gender: gender,
+          dateAdded: firebase.database.ServerValue.TIMESTAMP
+        });
+      });
+
+      // Firebase watcher .on("child_added"
+      database.ref().on(
+        "child_added",
+        function(snapshot) {
+          // storing the snapshot.val() in a variable for convenience
+          var sv = snapshot.val();
+
+          // Console.loging the last user's data
+          console.log(sv.pname);
+          console.log(sv.name);
+          console.log(sv.email);
+          console.log(sv.age);
+          console.log(sv.comment);
+          console.log(sv.gender);
+          console.log(sv.clothing);
+          // console.log(sv.shoe);
+
+          // Change the HTML to reflect
+          $("#pname-display").text(sv.pname);
+          $("#name-display").text(sv.name);
+          $("#email-display").text(sv.email);
+          $("#age-display").text(sv.age);
+          $("#gift-display").text(sv.comment);
+          $("#gender-display").text(sv.gender);
+          $("#clothing-display").text(sv.clothing);
+          // $("#shoe-display").text(sv.shoe);
+
+          // Handle the errors
+        },
+        function(errorObject) {
+          console.log("Errors handled: " + errorObject.code);
+        }
+      );
+    </script>
+  </body>
+</html>

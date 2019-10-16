@@ -1,0 +1,40 @@
+/* Page1 css */
+
+.jumbotron{
+    background: rgba(3, 235, 3, 0.452);
+    /* background-image: url(https://www.easywdw.com/reports13/mickeys_christmastime_parade_party_2016-8.jpg); */
+}
+.display-4{
+    margin-left: 168px;
+}
+#button{
+    margin-top: 250px;
+    margin-left: 500px;
+}
+#photo1{
+   margin: auto;
+    width: 400px;
+}
+#photo2{
+    margin: auto;
+    width: 400px;
+}
+#photo3{
+    margin: auto;
+    width: 400px;
+}
+/* #jumboimage{
+    background: url(https://gallery.mailchimp.com/304eff75e71b175f370020b9d/images/51e9b7ca-270f-490a-99d9-875e80af2bf8.png) 
+}  */
+#header{
+    width: 700px;
+    /* margin: unset; */
+    margin-left: 242px;
+    margin-top: -71px;
+}
+
+#form{
+    margin-left: 264px;
+    margin-top: 77px;
+    background-color: red;
+}
